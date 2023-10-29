@@ -1,0 +1,112 @@
+<html manifest="Cache.manifest">
+
+<head>
+    <meta charset="utf-8" />
+    <title>PS5 4.03 Kernel Exploit</title>
+    <link rel="shortcut icon" href="favicon.ico"></link>
+</head>   
+<body>
+<script>
+document.body.style.backgroundImage = "url('0.jpg')";
+</script>
+<script>
+window.applicationCache.ondownloading = function()
+{
+	alert("Caching started !!")
+};
+
+window.applicationCache.onprogress = function(a)
+{
+	document.getElementById("progress").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+};
+
+window.applicationCache.oncached = window.applicationCache.onupdateready = function()
+{
+	alert("Page Cached!!")
+    document.location.href = document.location.href;
+};
+
+if(!document.location.href.endswith("/index.html"))
+    document.location.href = "index.html";
+</script>
+    <script>
+        // Init on English Language
+        changeLanguage('english')
+
+        function changeLanguage(lang) {
+            Array.from(document.querySelectorAll('.language')).map( element => {
+                element.style.display = 'none'
+            });
+            if (document.getElementById(lang)) {
+                document.getElementById(lang).style.display = 'block';
+            }
+        }
+    </script>
+    <center>
+     <p>
+        <a href="#" onclick="changeLanguage('english'); return false">English</a>
+        <a href="#" onclick="changeLanguage('russian'); return false">Русский</a>
+    </p>
+    <div id="english" class="language" style="display: block">
+        <h3 style="color:white;">READ THIS CAREFULLY BEFORE PROCEEDING</h3><br />
+        <p style="color:white;"><b>This exploit loads payloads in PLD (.bin) format on PS5 firmware 4.03. Other firmwares and payload formats are NOT supported.</b></p><br />
+        <ol style="color:white;">
+            <li>Click on the link that says JB+NETCAT. In about 20 seconds you'll get a popup saying
+                "waiting for payloads". This means that everything has gone well.
+                You can then send your payload to TCP port 9019.<br />
+                If something went wrong during the process, you may get an alert saying "Jailbreak failed! Reboot your
+                PS5 and try again.". In this case you must reboot your PS5, preferrably without closing the dialog
+                box.<br /><br />
+                If the system hangs for more than a minute (may require more time on slow Internet connections), reboot
+                your PS5 and try again.<br />
+                If the system crashes (looks like instant powerdown), press the power button on the PS5 (NOT on the
+                gamepad) until it turns on again, then retry.
+            </li>
+            <li>You can load ps5-kstuff (a partial HEN for PS4 fake packages) by clicking JB+KSTUFF instead. Everything
+                above applies. Note that PS4 homebrews that use direct kernel access (kexec) are not supported and will
+                not work using this payload. You can also download the payload for manual sending <a href="ps5-kstuff.bin">here</a>.</li>
+        </ol>
+        <p style="color:white;"><i>This exploit <b>does</b> crash and hang. Sometimes you even have to retry 10 times to get the
+                jailbreak.</i></p><br />
+        <p style="font-size:18px;color:white;"><i>FarhangStore : Receive Unlimited Active Xboxone - Xboxseries Accounts and PS4 - PS5 Hacked Accounts - 📞 Phone : +93778182450   -   +93745697000</i></p><br />
+  
+   <a style='font-size:22px;text-align:center;color:#FFD700;'>
+       FarhangStore : <a style='font-size:21px;text-align:center;color:white;'>
+       Find Us On The Telegram <a href="http://t.me/Farhangstore07" style='font-size:21px;text-align:center;color:red;'>@Farhangstore07</a><a style='font-size:21px;text-align:center;color:white;'> &nbsp; - &nbsp; WhatsApp : &nbsp;<a href="https://api.whatsapp.com/send/?phone=93780806306&text&app_absent=0" style='font-size:22px;text-align:center;color:red;'>+93780806306  <a style='font-size:21px;text-align:center;color:white;'><br /><br /><br /> 
+
+   </div>
+    <div id="russian" class="language" style="display: none">
+        <h3 style="color:white;">ВНИМАТЕЛЬНО ПРОЧИТАЙТЕ ИНСТРУКЦИЮ ПРЕЖДЕ ЧЕМ ПРОДОЛЖАТЬ</h3>
+        <p style="color:white;"><b>Этот эксплоит загружает пейлоады в формате PLD (.bin) на PS5 с прошивкой 4.03. Другие прошивки и форматы НЕ поддерживаются.</b></p>
+        <ol style="color:white;">
+            <li>Нажмите на ссылку &laquo;JB+NETCAT&raquo;. В течение примерно 20 секунд появится уведомление
+                &laquo;waiting for payloads&raquo;. Это значит, что взлом сработал, и вы можете послать
+                пейлоад на TCP-порт 9019.<br />
+                Если что-то пошло не так, может вылететь ошибка &laquo;Jailbreak failed! Reboot your PS5 and try
+                again.&raquo;. В этом случае необходимо, не закрывая окно, перезагрузить консоль.<br />
+                Если взлом занимает больше минуты, и у вас адекватное интернет-соединение, скорее всего он повис.
+                Перезагрузите приставку и попробуйте еще раз.<br />
+                Если система крашится (выглядит как мгновенное выключение), нажимайте кнопку включения на ПРИСТАВКЕ (НЕ
+                НА КОНТРОЛЛЕРЕ), пока она не включится, после чего повторите взлом.
+            </li>
+            <li>Вы можете загрузить ps5-kstuff (частичный HEN для fake pkg приложений PS4), нажав JB+KSTUFF. Всё написанное выше применимо и к
+                ps5-kstuff. Обратите внимание, что homebrew-приложения, использующие прямой доступ к ядру (kexec), не поддерживаются и работать
+                не будут. Файл пейлоада для ручной отправки можно скачать <a href="ps5-kstuff.bin">здесь</a>.</li>
+        </ol>
+        <p style="color:white;"><i>Эксплойт <b>будет</b> крашиться и виснуть, иногда вообще только с 10 попытки заводится.</i></p>
+         <p style="font-size:18px;color:white;"><i>FarhangStore : Receive Unlimited Active Xboxone - Xboxseries Accounts and PS4 - PS5 Hacked Accounts - 📞 Phone : +93778182450   -   +93745697000</i></p><br />
+  
+   <a style='font-size:22px;text-align:center;color:#FFD700;'>
+       FarhangStore : <a style='font-size:21px;text-align:center;color:white;'>
+       Find Us On The Telegram <a href="http://t.me/Farhangstore07" style='font-size:21px;text-align:center;color:red;'>@Farhangstore07</a><a style='font-size:21px;text-align:center;color:white;'> &nbsp; - &nbsp; WhatsApp : &nbsp;<a href="https://api.whatsapp.com/send/?phone=93780806306&text&app_absent=0" style='font-size:22px;text-align:center;color:red;'>+93780806306  <a style='font-size:21px;text-align:center;color:white;'><br /><br />  
+
+	</div>
+    <div id="progress"></div>
+
+<a href="netcat.html">JB+NETCAT</a>&nbsp;&nbsp;&nbsp;
+<a style="color:yellow;" href="netcat.html#payload=henstuff.bin">JB+PS5HEN 1.0</a>&nbsp;&nbsp;&nbsp;
+<a style="color:yellow;" href="netcat.html#payload=payload.bin">JB+PS5HEN 1.3</a>	
+</center>
+</body>
+
+</html>
